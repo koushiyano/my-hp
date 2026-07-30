@@ -158,6 +158,18 @@
   }
   .service-card h3{font-size:18px;font-weight:600;margin-bottom:16px;letter-spacing:.04em;line-height:1.6;}
   .service-card p{font-size:13.5px;color:var(--ink-soft);}
+  .solves{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);}
+  .solves-label{
+    display:block;font-size:10.5px;letter-spacing:.1em;color:var(--mute);margin-bottom:9px;
+  }
+  .pain-tag{
+    display:inline-block;font-size:11.5px;color:var(--navy-soft);
+    border:1px solid var(--line);border-radius:2px;padding:3px 9px;
+    margin:0 6px 6px 0;
+  }
+  .service-card .outcome{
+    font-size:13px;color:var(--ink);margin-top:14px;font-weight:500;line-height:1.7;
+  }
 
   /* COMPANY TABLE */
   table{width:100%;border-collapse:collapse;font-size:14px;}
@@ -168,37 +180,34 @@
     width:180px;color:var(--mute);font-size:12px;letter-spacing:.1em;font-weight:500;
   }
 
-  /* SCOPE TABLE */
-  .scope-table{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixed;}
-  .scope-table th,.scope-table td{
-    padding:18px 20px;text-align:left;vertical-align:top;font-weight:400;
-    border-top:1px solid var(--line);line-height:1.7;
+  .past-future{
+    display:flex;align-items:stretch;gap:0;
   }
-  .scope-table tr:last-child td{border-bottom:1px solid var(--line);}
-  .scope-table th.row-label{width:110px;}
-  .scope-table td.row-label{
-    color:var(--mute);font-size:12px;letter-spacing:.08em;font-weight:500;padding-left:0;
+  .pf-card{
+    flex:1;padding:32px 30px;border:1px solid var(--line);
   }
-  .scope-table th{
-    font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;letter-spacing:.04em;
-    border-top:none;padding-bottom:14px;position:relative;
+  .pf-past{background:var(--paper-deep);color:var(--mute);}
+  .pf-future{background:var(--paper);border-color:var(--navy);border-width:1.5px;}
+  .pf-label{
+    display:block;font-size:11px;letter-spacing:.12em;font-weight:600;margin-bottom:14px;
   }
-  .scope-table th.col-ours{color:var(--ink);}
-  .scope-table th.col-others{color:var(--mute);font-weight:500;}
-  .ours-tag{
-    display:block;font-family:'Noto Sans JP',sans-serif;font-size:10px;font-weight:500;
-    letter-spacing:.1em;color:var(--paper);background:var(--navy);
-    padding:3px 9px;border-radius:2px;width:fit-content;margin-top:8px;
+  .pf-past .pf-label{color:var(--mute);}
+  .pf-future .pf-label{color:var(--navy);}
+  .pf-headline{
+    font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;margin-bottom:14px;line-height:1.6;
   }
-  .scope-table td.col-ours{
-    color:var(--ink-soft);background:var(--paper-deep);border-left:1px solid var(--line);border-right:1px solid var(--line);
+  .pf-past .pf-headline{color:var(--ink-soft);}
+  .pf-future .pf-headline{color:var(--ink);}
+  .pf-desc{font-size:12.5px;line-height:1.8;}
+  .pf-past .pf-desc{color:var(--mute);}
+  .pf-future .pf-desc{color:var(--ink-soft);}
+  .pf-arrow{
+    display:flex;align-items:center;justify-content:center;
+    width:56px;flex-shrink:0;color:var(--mute);font-size:18px;
   }
-  .scope-table td.col-others{color:var(--mute);}
-  .scope-table thead th.col-ours{background:transparent;}
   @media (max-width:640px){
-    .scope-table{font-size:12.5px;}
-    .scope-table th,.scope-table td{padding:14px 10px;}
-    .scope-table th.row-label{width:64px;}
+    .past-future{flex-direction:column;}
+    .pf-arrow{width:100%;height:36px;transform:rotate(90deg);}
   }
 
   .type-grid{
@@ -352,50 +361,21 @@
         </div>
       </div>
 
-      <div class="reveal" style="margin-top:72px;">
-        <p style="font-size:14px;color:var(--ink-soft);max-width:600px;margin-bottom:36px;">これらはすべて、専門的には「<strong style="color:var(--ink);">管理会計</strong>」と呼ばれる領域の話です。似た言葉に「財務会計」がありますが、役割は異なります。</p>
-
-        <table class="scope-table">
-          <thead>
-            <tr>
-              <th class="row-label"></th>
-              <th class="col-ours">
-                管理会計
-                <span class="ours-tag">私たちの領域</span>
-              </th>
-              <th class="col-others">財務会計</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="row-label">作成目的</td>
-              <td class="col-ours">「社内」の経営者・管理者に向けて、経営判断に使う数字を届ける</td>
-              <td class="col-others">「社外」の株主・金融機関などに向けて、財務状況を報告する</td>
-            </tr>
-            <tr>
-              <td class="row-label">作成義務</td>
-              <td class="col-ours">なし(会社ごとに任意)</td>
-              <td class="col-others">あり(法律で義務付け)</td>
-            </tr>
-            <tr>
-              <td class="row-label">主な書類</td>
-              <td class="col-ours">資金繰り表・予実管理表・部門別損益 など</td>
-              <td class="col-others">貸借対照表・損益計算書・キャッシュフロー計算書 など</td>
-            </tr>
-            <tr>
-              <td class="row-label">開示対象</td>
-              <td class="col-ours">経営者・役員・管理者 など社内の意思決定者</td>
-              <td class="col-others">株主・金融機関・取引先・税務署 など社外</td>
-            </tr>
-            <tr>
-              <td class="row-label">形式</td>
-              <td class="col-ours">会社ごとのルールで自由に設計</td>
-              <td class="col-others">会計基準・税法に準拠して作成</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p style="font-size:13px;color:var(--mute);margin-top:32px;max-width:600px;border-top:1px solid var(--line);padding-top:22px;">記帳・税務申告など「財務会計」に関わる会計処理そのものは、顧問税理士・会計士と連携しながら進めます。私たちが専門とするのは、その数字を経営判断に使えるかたちに変える「管理会計」の設計と運用です。</p>
+      <div class="reveal" style="margin-top:64px;">
+        <div class="past-future">
+          <div class="pf-card pf-past">
+            <span class="pf-label">税理士</span>
+            <p class="pf-headline">過去を、正しく記録する。</p>
+            <p class="pf-desc">すでに終わった取引を、ルールに沿って記帳・申告する。会社を守るために欠かせない存在です。</p>
+          </div>
+          <div class="pf-arrow">→</div>
+          <div class="pf-card pf-future">
+            <span class="pf-label">MastStep</span>
+            <p class="pf-headline">未来を、決断できる形にする。</p>
+            <p class="pf-desc">その数字をもとに、この先どう動くべきかを一緒に考える。私たちが専門とするのは、ここから先です。</p>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--mute);margin-top:28px;">記帳・税務申告は、顧問税理士・会計士と連携しながら進めます。</p>
       </div>
     </div>
   </section>
@@ -426,16 +406,32 @@
           <span class="tag">CFO ADVISORY</span>
           <h3>CFO代行・<br>財務戦略設計</h3>
           <p>資金繰り管理、月次決算のスピードアップ、経営会議で使える数字の見せ方まで、社外CFOとして経営に伴走します。</p>
+          <div class="solves">
+            <span class="solves-label">こんな悩みに</span>
+            <span class="pain-tag">今月の着地が読めない</span>
+            <span class="pain-tag">来月の支払いが不安</span>
+          </div>
+          <p class="outcome">→ 資金繰りの不安が減り、月次の着地を自分の言葉で説明できるようになります。</p>
         </div>
         <div class="service-card">
           <span class="tag">FUNDRAISING</span>
           <h3>資金調達<br>支援</h3>
           <p>金融機関との折衝、事業計画・資金計画の策定、投資家向け資料の作成まで、資金調達の一連のプロセスを支援します。</p>
+          <div class="solves">
+            <span class="solves-label">こんな悩みに</span>
+            <span class="pain-tag">銀行にどう説明すればいいか</span>
+          </div>
+          <p class="outcome">→ 数字の裏付けを持って、銀行・投資家に説得力のある説明ができるようになります。</p>
         </div>
         <div class="service-card">
           <span class="tag">MANAGEMENT ACCOUNTING</span>
           <h3>管理会計・<br>体制構築</h3>
           <p>部門別損益や予実管理の仕組みを整え、感覚ではなく数字で経営判断ができる管理会計の基盤をつくります。</p>
+          <div class="solves">
+            <span class="solves-label">こんな悩みに</span>
+            <span class="pain-tag">儲かってるはずなのにお金がない</span>
+          </div>
+          <p class="outcome">→ どの事業・商品が本当に儲かっているかが分かり、勘に頼らない判断ができるようになります。</p>
         </div>
       </div>
     </div>
