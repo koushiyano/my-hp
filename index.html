@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社◯◯ | 財務コンサルティング・CFO代行・資金調達支援</title>
+
+<!-- ▼ meta description: 検索結果に表示される説明文。会社名・サービス内容が決まったら書き換えてください -->
+<meta name="description" content="株式会社◯◯は、中小企業・スタートアップ向けの財務コンサルティング会社です。CFO代行、資金調達支援、管理会計の体制構築まで、経営者の意思決定に伴走します。">
+
+<!-- ▼ 検索エンジンにインデックスさせる設定。公開前のテスト中は noindex にしておくと安全 -->
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://example.com/">
+
+<!-- ▼ OGP: SNS(X, LINE, Facebookなど)でURLをシェアした時の見え方 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社◯◯">
+<meta property="og:title" content="株式会社◯◯ | 財務コンサルティング">
+<meta property="og:description" content="中小企業・スタートアップ向けの財務コンサルティング。CFO代行、資金調達支援、管理会計の体制構築まで伴走します。">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/ogp-image.png">
+<meta property="og:locale" content="ja_JP">
+
+<!-- ▼ Xでシェアされた時のカード表示 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="株式会社◯◯ | 財務コンサルティング">
+<meta name="twitter:description" content="中小企業・スタートアップ向けの財務コンサルティング。CFO代行、資金調達支援、管理会計の体制構築まで伴走します。">
+<meta name="twitter:image" content="https://example.com/ogp-image.png">
+
+<!-- ▼ favicon: 天秤(バランス)モチーフの簡易アイコン。ロゴが決まったら差し替え推奨 -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F7F6F2'/%3E%3Cline x1='32' y1='14' x2='32' y2='42' stroke='%2322344B' stroke-width='2.5'/%3E%3Cline x1='14' y1='42' x2='50' y2='42' stroke='%2322344B' stroke-width='2.5'/%3E%3Ccircle cx='14' cy='42' r='4' fill='%2322344B'/%3E%3Ccircle cx='50' cy='42' r='4' fill='%2322344B'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F6F2;
+    --paper-deep:#F1EFE9;
+    --ink:#17191C;
+    --ink-soft:#4A4D52;
+    --mute:#8A8D91;
+    --line:#DEDBD3;
+    --navy:#22344B;
+    --navy-soft:#3C5B7D;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:300;
+    line-height:1.9;
+    letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Noto Serif JP',serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    display:block;
+    font-size:12px;
+    letter-spacing:.28em;
+    color:var(--mute);
+    margin-bottom:18px;
+    font-weight:500;
+  }
+
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(247,246,242,.86);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--line);}
+  .nav-inner{
+    max-width:960px;margin:0 auto;padding:20px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:600;letter-spacing:.06em;}
+  nav ul{list-style:none;display:flex;gap:36px;}
+  nav a{font-size:13px;letter-spacing:.08em;color:var(--ink-soft);position:relative;}
+  nav a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;
+    background:var(--navy);transform:scaleX(0);transform-origin:right;
+    transition:transform .3s ease;
+  }
+  nav a:hover::after{transform:scaleX(1);transform-origin:left;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative;}
+  .nav-toggle span{position:absolute;left:0;right:0;height:1px;background:var(--ink);transition:.3s;}
+  .nav-toggle span:nth-child(1){top:0;}
+  .nav-toggle span:nth-child(2){top:9px;}
+  .nav-toggle span:nth-child(3){top:18px;}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:120px;padding-bottom:80px;position:relative;
+  }
+  .hero h1{
+    font-size:clamp(30px,4.4vw,52px);
+    font-weight:600;
+    line-height:1.55;
+    letter-spacing:.04em;
+    margin-bottom:36px;
+  }
+  .hero p{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:480px;
+  }
+  .balance-line{
+    margin:56px 0 8px;
+    width:100%;
+    max-width:520px;
+  }
+  .balance-line svg{width:100%;height:auto;display:block;}
+  .balance-tick{
+    font-size:11px;letter-spacing:.14em;color:var(--mute);
+    display:flex;justify-content:space-between;max-width:520px;margin-top:6px;
+  }
+
+  /* SECTION SHARED */
+  section{padding:120px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:64px;max-width:620px;}
+  .section-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:.05em;line-height:1.6;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* MISSION */
+  .mission-list{list-style:none;}
+  .mission-list li{
+    display:flex;gap:28px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .mission-list li:last-child{border-bottom:1px solid var(--line);}
+  .mission-list .num{
+    font-family:'Noto Serif JP',serif;
+    font-size:13px;color:var(--navy-soft);
+    letter-spacing:.1em;flex:0 0 32px;padding-top:2px;
+  }
+
+  /* SERVICES */
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--paper);
+    padding:44px 34px;
+    transition:background .35s ease;
+  }
+  .service-card:hover{background:var(--paper-deep);}
+  .service-card .tag{
+    font-size:11px;letter-spacing:.16em;color:var(--navy-soft);margin-bottom:22px;display:block;
+  }
+  .service-card h3{font-size:18px;font-weight:600;margin-bottom:16px;letter-spacing:.04em;line-height:1.6;}
+  .service-card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* VALUES */
+  .value-row{
+    display:grid;grid-template-columns:160px 1fr;gap:24px;
+    padding:34px 0;border-top:1px solid var(--line);
+  }
+  .value-row:last-child{border-bottom:1px solid var(--line);}
+  .value-row h3{font-size:19px;font-weight:600;letter-spacing:.06em;}
+  .value-row p{font-size:14px;color:var(--ink-soft);max-width:520px;}
+
+  /* COMPANY TABLE */
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  table tr{border-top:1px solid var(--line);}
+  table tr:last-child{border-bottom:1px solid var(--line);}
+  table th,table td{padding:20px 0;text-align:left;font-weight:400;vertical-align:top;}
+  table th{
+    width:180px;color:var(--mute);font-size:12px;letter-spacing:.1em;font-weight:500;
+  }
+
+  /* CONTACT */
+  .contact-box{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;
+  }
+  .contact-box p{font-size:14px;color:var(--ink-soft);max-width:420px;}
+  .cta{
+    display:inline-flex;align-items:center;gap:14px;
+    border:1px solid var(--ink);
+    padding:16px 30px;font-size:13px;letter-spacing:.1em;
+    transition:background .3s ease, color .3s ease;
+  }
+  .cta:hover{background:var(--ink);color:var(--paper);}
+  .cta svg{width:14px;height:14px;transition:transform .3s ease;}
+  .cta:hover svg{transform:translateX(4px);}
+
+  footer{padding:40px 0;font-size:11px;color:var(--mute);letter-spacing:.06em;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:780px){
+    .service-grid{grid-template-columns:1fr;}
+    .value-row{grid-template-columns:1fr;gap:10px;}
+    nav ul{
+      position:fixed;top:64px;left:0;right:0;bottom:0;
+      background:var(--paper);
+      flex-direction:column;gap:0;
+      padding:20px 32px;
+      transform:translateY(-110%);
+      transition:transform .35s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    nav li{border-bottom:1px solid var(--line);}
+    nav a{display:block;padding:18px 0;font-size:15px;}
+    .nav-toggle{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="nav-inner">
+    <a class="logo" href="#top">株式会社◯◯</a>
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#mission">ミッション</a></li>
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#values">私たちの想い</a></li>
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow">FINANCIAL ADVISORY / 財務コンサルティング</span>
+      <h1>数字の裏側にある経営判断に、<br>静かに寄り添う。</h1>
+      <p>私たちは中小企業・スタートアップの経営者に伴走し、資金繰りから資金調達、管理会計の仕組みづくりまで、意思決定に必要な財務の土台を整えます。</p>
+
+      <div class="balance-line">
+        <svg viewBox="0 0 520 60" id="balance-svg">
+          <g id="balance-group" style="transform-origin:260px 8px;">
+            <line x1="260" y1="8" x2="260" y2="0" stroke="#22344B" stroke-width="1"/>
+            <line x1="40" y1="40" x2="480" y2="40" stroke="#22344B" stroke-width="1" id="beam"/>
+            <circle cx="40" cy="40" r="4" fill="#22344B"/>
+            <circle cx="480" cy="40" r="4" fill="#22344B"/>
+            <line x1="260" y1="8" x2="260" y2="40" stroke="#22344B" stroke-width="1"/>
+          </g>
+        </svg>
+        <div class="balance-tick"><span>資金繰り</span><span>ガバナンス</span><span>資本政策</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">MISSION</span>
+        <h2>私たちのミッション</h2>
+      </div>
+      <ul class="mission-list reveal">
+        <li><span class="num">01</span><span>中小企業の多くは、日々の資金繰りに追われ、中長期の財務戦略にまで手が回りません。私たちはその「手が回らない部分」を専門家として引き受けます。</span></li>
+        <li><span class="num">02</span><span>経営者が数字に振り回されるのではなく、数字を武器にして意思決定できる状態をつくることを目指しています。</span></li>
+        <li><span class="num">03</span><span>単発のアドバイスではなく、資金調達・管理会計・報告体制の構築までを一気通貫で支援し、社内に財務機能そのものを残します。</span></li>
+        <li><span class="num">04</span><span>私たちは事業会社としてこれから設立準備を進めており、まずは少数のクライアントと深く伴走することから始めます。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="service">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">SERVICE</span>
+        <h2>提供するサービス</h2>
+      </div>
+      <div class="service-grid reveal">
+        <div class="service-card">
+          <span class="tag">CFO ADVISORY</span>
+          <h3>CFO代行・<br>財務戦略設計</h3>
+          <p>資金繰り管理、月次決算のスピードアップ、経営会議で使える数字の見せ方まで、社外CFOとして経営に伴走します。</p>
+        </div>
+        <div class="service-card">
+          <span class="tag">FUNDRAISING</span>
+          <h3>資金調達<br>支援</h3>
+          <p>金融機関との折衝、事業計画・資金計画の策定、投資家向け資料の作成まで、資金調達の一連のプロセスを支援します。</p>
+        </div>
+        <div class="service-card">
+          <span class="tag">MANAGEMENT ACCOUNTING</span>
+          <h3>管理会計・<br>体制構築</h3>
+          <p>部門別損益や予実管理の仕組みを整え、感覚ではなく数字で経営判断ができる管理会計の基盤をつくります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">VALUES</span>
+        <h2>大切にしていること</h2>
+      </div>
+      <div class="reveal">
+        <div class="value-row">
+          <h3>誠実</h3>
+          <p>都合の良い数字ではなく、事実に基づいた数字を伝えます。厳しい現実も、経営者にとって必要な情報として率直にお伝えします。</p>
+        </div>
+        <div class="value-row">
+          <h3>伴走</h3>
+          <p>スポットのアドバイスで終わらせず、意思決定の現場に同席し、実行まで責任を持って支援します。</p>
+        </div>
+        <div class="value-row">
+          <h3>再現性</h3>
+          <p>私たちが抜けた後も社内で回る仕組みを残すことを重視し、属人化しない財務体制の構築を目指します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">COMPANY</span>
+        <h2>会社概要</h2>
+      </div>
+      <table class="reveal">
+        <tr><th>商号</th><td>株式会社◯◯(設立準備中)</td></tr>
+        <tr><th>設立予定</th><td>2026年 ◯月予定</td></tr>
+        <tr><th>所在地</th><td>東京都◯◯区(予定)</td></tr>
+        <tr><th>事業内容</th><td>財務コンサルティング、CFO代行、資金調達支援、管理会計体制構築支援</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">CONTACT</span>
+        <h2>お問い合わせ</h2>
+      </div>
+      <div class="contact-box reveal">
+        <p>財務のご相談、資金調達、業務提携など、どなたでもお気軽にご連絡ください。まずはお話をお伺いするところから始めます。</p>
+        <a class="cta" href="mailto:info@example.com">
+          お問い合わせはこちら
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 株式会社◯◯</span>
+    <span>個人情報保護方針</span>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  const toggle = document.getElementById('nav-toggle');
+  const navList = document.getElementById('nav-list');
+  toggle.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  if (!reduceMotion) {
+    const group = document.getElementById('balance-group');
+    let start = null;
+    function animateBalance(ts){
+      if(!start) start = ts;
+      const t = (ts - start) / 1400;
+      const settle = Math.sin(t) * Math.exp(-t*1.2) * 6;
+      group.style.transform = `rotate(${settle}deg)`;
+      if (t < 4) requestAnimationFrame(animateBalance);
+      else group.style.transform = 'rotate(0deg)';
+    }
+    requestAnimationFrame(animateBalance);
+  }
+</script>
+
+</body>
+</html>
