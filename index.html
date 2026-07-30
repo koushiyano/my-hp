@@ -201,6 +201,40 @@
   footer{padding:40px 0;font-size:11px;color:var(--mute);letter-spacing:.06em;}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
+  /* CONTACT FORM */
+  .hp-field{position:absolute;left:-9999px;top:-9999px;}
+  .contact-form{max-width:520px;}
+  .field{margin-bottom:30px;}
+  .field label{
+    display:block;font-size:12px;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:10px;
+  }
+  .field .req{
+    font-size:10px;color:var(--navy-soft);letter-spacing:.08em;margin-left:8px;
+    border:1px solid var(--navy-soft);padding:1px 6px;border-radius:2px;vertical-align:middle;
+  }
+  .field input,.field textarea{
+    width:100%;
+    border:none;border-bottom:1px solid var(--line);
+    background:transparent;
+    padding:10px 2px;
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:15px;color:var(--ink);
+    outline:none;
+    transition:border-color .25s ease;
+    resize:vertical;
+  }
+  .field input:focus,.field textarea:focus{border-color:var(--navy);}
+  .contact-form button.cta{
+    border:1px solid var(--ink);background:transparent;
+    font-family:inherit;cursor:pointer;margin-top:10px;
+  }
+  .form-success{
+    max-width:520px;padding:28px 0;font-size:14px;color:var(--ink-soft);
+  }
+  .form-success p{
+    border-top:1px solid var(--line);padding-top:24px;
+  }
+
   @media (max-width:780px){
     .service-grid{grid-template-columns:1fr;}
     .value-row{grid-template-columns:1fr;gap:10px;}
@@ -347,12 +381,42 @@
         <span class="eyebrow">CONTACT</span>
         <h2>お問い合わせ</h2>
       </div>
-      <div class="contact-box reveal">
-        <p>財務のご相談、資金調達、業務提携など、どなたでもお気軽にご連絡ください。まずはお話をお伺いするところから始めます。</p>
-        <a class="cta" href="mailto:info@example.com">
-          お問い合わせはこちら
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+      <div class="reveal">
+        <p style="font-size:14px;color:var(--ink-soft);max-width:520px;margin-bottom:44px;">財務のご相談、資金調達、業務提携など、どなたでもお気軽にご連絡ください。まずはお話をお伺いするところから始めます。</p>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp-field"><label>入力しないでください<input name="bot-field"></label></p>
+
+          <div class="field">
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">メールアドレス<span class="req">必須</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="field">
+            <label for="company">会社名・屋号</label>
+            <input type="text" id="company" name="company">
+          </div>
+
+          <div class="field">
+            <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="cta">
+            送信する
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <div class="form-success" id="form-success" hidden>
+          <p>お問い合わせありがとうございます。内容を確認の上、担当よりご連絡いたします。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -396,6 +460,26 @@
       else group.style.transform = 'rotate(0deg)';
     }
     requestAnimationFrame(animateBalance);
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        contactForm.hidden = true;
+        document.getElementById('form-success').hidden = false;
+      })
+      .catch(() => {
+        alert('送信に失敗しました。恐れ入りますが、時間をおいて再度お試しください。');
+      });
+    });
   }
 </script>
 
